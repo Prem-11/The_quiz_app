@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        .results-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #28a745;
+            text-align: center;
+        }
+        .btn-link {
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="results-container">
+        <h2>Quiz Results</h2>
+        <div>
+            <p><strong>Total Questions Answered:</strong> {{ session.total_questions }}</p>
+            <p><strong>Correct Answers:</strong> {{ session.correct_answers }}</p>
+            <p><strong>Incorrect Answers:</strong> {{ session.incorrect_answers }}</p>
+        </div>
+        <a href="{% url 'start_quiz' %}" class="btn btn-link">Start a New Quiz</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
